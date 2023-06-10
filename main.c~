@@ -10,7 +10,7 @@ struct cord {
 		std::cout << x1 << ", " << y1 << " ; " << x2 << ", " << y2 << std::endl;
 	}
 	bool getCanKillP() {
-		if ( abs(x2 - x1) == 1 ) {
+		if ( abs(x2 - x1) == 1 && (y1 != y2) ) {
 			return true;
 		}
 		return false;

@@ -23,7 +23,7 @@ void getcord(struct cord *cords) {
 int main () {
 	struct cord corrQueen;
 	getcord(&corrQueen);
-	corrQueen.show();
+	//corrQueen.show();
 	std::cout << (corrQueen.getCanMoveQ()?"YES":"NO") << std::endl;
 	return 0;
 }

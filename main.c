@@ -1,24 +1,29 @@
 #include <iostream>
 
+struct cord {
+	unsigned char x1;
+	unsigned char y1;
+	unsigned char x2;
+	unsigned char y2;
 
-int a = 90;
-
-
-int main() {
-
-	int a = 10;
-
-	{
-		int a = 20;
-
-		a = a + 10;
-
-		::a = 22;
-
-		std::cout << ::a << "," << a << std::endl;
+	void show() {
+		std::cout << x1 << ", " << y1 << " ; " << x2 << ", " << y2 << std::endl;
 	}
+	bool getCanMoveQ() {
+		if ( x1 == x2 || y1 == x2 || abs(x2 - x1) == abs(y2 - y1) ) {
+			return true;
+		}
+		return false;
+	}
+};
+void getcord(struct cord *cords) {
+	std::cin >> cords->x1 >> cords->y1 >> cords->x2 >> cords->y2;
+}
 
-	std::cout << a << std::endl;
-	std::cout << ::a << std::endl;
+int main () {
+	struct cord corrQueen;
+	getcord(&corrQueen);
+	corrQueen.show();
+	std::cout << (corrQueen.getCanMoveQ()?"YES":"NO") << std::endl;
 	return 0;
 }
